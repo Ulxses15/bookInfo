@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+public class Book {
+	
+	private String title;
+	private String author;
+	private int pages;
+	private String cover;
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public String getTitle() {
+		return title;
+	}
+	
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	public String getAuthor() {
+		return author;
+	}
+	
+	public void setPages(int pages) {
+		this.pages = pages;
+	}
+	
+	public int getPages() {
+		return pages;
+	}
+	
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
+	
+	public String getCover() {
+		return cover;
+	}
+}
+
+public class bookInfo {
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		Book book = new Book();
+		
+		System.out.println("Enter the book title: ");
+		String title = scnr.nextLine();
+		book.setTitle(title);
+		
+		System.out.println("Enter the author's name");
+		String author = scnr.nextLine();
+		book.setAuthor(author);
+		
+		System.out.println("Enter the number of pages");
+		int pages = scnr.nextInt();
+		book.setPages(pages);
+		
+		scnr.nextLine();
+		
+		Book cover = book;
+		
+		System.out.println("Enter the cover type (hard cover or paper cover)");
+		String coverType = scnr.nextLine();
+		cover.setCover(coverType);
+		
+		System.out.println("Book details: ");
+		System.out.println("Title: " + book.getTitle());
+		System.out.println("Author: " + book.getAuthor());
+		System.out.println("Pages: " + book.getPages());
+		System.out.println("Cover type: " + cover.getCover());
+		
+		if (pages > 300) {
+			System.out.println("This is a long book.");
+		}
+		else {
+			System.out.println("This is not a long book.");
+		}
+		
+		scnr.close();
+		
+	}
+}
